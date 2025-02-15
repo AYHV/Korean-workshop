@@ -1,0 +1,8 @@
+Notion Link
+https://quiet-garden-ce3.notion.site/Korean-School-In-My-Hands-WEB-19ab20e276388033842aec4b15578b48
+
+
+You need to place the file according to the path below.
+(Unzip the files under your root folder)
+your project root folder/assets/img
+your project root folder/locales/localization.js
