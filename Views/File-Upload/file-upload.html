@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="파일 업로드">파일 업로드</title>
+    <link rel="stylesheet" href="/Views/File-Upload/file-Upload.css ">
+    <link rel="icon" href="/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">NOSTACK</div>
+        <nav class="navigation">
+            <div class="nav-links">
+                <div class="nav-link" data-i18n="Home" onclick="location.href='../Main/main.html'">Home</div>
+                <div class="nav-link" data-i18n="문제집 생성" onclick="location.href='../Category/category.html'">문제집 생성</div>
+                <div class="nav-link" data-i18n="보관함" onclick="location.href='../History/history.html'">보관함</div>
+            </div>
+            <div class="divider"></div>
+            <div class="translate-buttons">
+                <button class="translate-btn" data-lang="ko">한국어</button>
+                <button class="translate-btn" data-lang="en">English</button>
+                <button class="translate-btn" data-lang="lo">ພາສາລາວ</button>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <div class="tab-menu">
+            <button class="tab active" onclick="activateTab(this, 'upload')" data-i18n="파일 업로드">파일 업로드</button>
+            <button class="tab" onclick="activateTab(this, 'convert')" data-i18n="파일 변환">파일 변환</button>
+            <button class="tab" onclick="activateTab(this, 'generate')" data-i18n="문제 생성">문제 생성</button>
+        </div>
+
+        <div id="upload-section" class="tab-content" style="display: block;">
+            <div class="upload-section">
+                <div class="upload-box" id="upload-box">
+                    <label for="file-upload" class="file-label">
+                        <span class="icon">
+                            <img src="/assets/img/upload-3d.png" alt="업로드 아이콘" style="width: auto; height: 90px;">
+                        </span>
+                        <span data-i18n="파일 업로드">파일 업로드</span>
+                    </label>
+                    <!-- 파일 형식 제한 적용 -->
+                    <input type="file" id="file-upload" class="file-input" accept=".pdf, .png" multiple>
+                </div>
+                <div class="upload-info">
+                    <p class="upload-title" data-i18n="파일 업로드">파일 업로드</p>
+                    <p class="click-here" data-i18n="폴더 아이콘을 클릭해 파일을 업로드 해 주세요.">폴더 아이콘을 클릭해 파일을 업로드 해 주세요.</p>
+                    <p class="upload-description" data-i18n="PDF, 이미지 파일 업로드 가능합니다.">PDF, 이미지 파일 업로드 가능합니다.</p>
+                </div>
+            </div>
+            <div id="uploaded-files" class="uploaded-files"></div>
+            <div class="complete-btn">
+                <button id="upload-complete-btn" data-i18n="업로드 완료">업로드 완료</button>
+            </div>
+        </div>
+
+        <div id="convert-section" class="tab-content" style="display: none;">
+            <div id="ocr-result-box" class="ocr-result-box">
+                <div id="ocr-result" class="ocr-result">
+                    <div id="generate-button" class="generate-btn"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="generate-section" class="tab-content" style="display: none;">
+            <div id="question-generation"></div>
+        </div>
+    </main>
+<script src="/config/apikey.js"></script>
+</body>
+
+<!-- PDF.js 라이브러리 추가 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script type="module" src="/index.js"></script>
+<script type="module" src="/controller/tabController.js"></script>
+<script type="module" src="/controller/fileUploadController.js"></script>
+<script type="module" src="/controller/ocrController.js"></script>
+<script type="module" src="/controller/questionController.js"></script>
+<script type="module" src="/Views/ocr/ocrView.js"></script>
+<script type="module" src="/services/localization.js"></script>
+</html>

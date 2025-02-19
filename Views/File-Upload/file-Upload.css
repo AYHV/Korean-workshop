@@ -1,0 +1,558 @@
+body, html {
+    margin: 0;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background-color: #fff;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: white;
+    border-bottom: 1px solid #486284;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: #ffffff;
+}
+  
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 550;
+    color: #0d2d57;
+    margin-left: 6%;
+}
+
+.translate-buttons {
+    margin-right: 20px; /* 오른쪽 여백 조정 */
+    display: flex; /* 버튼을 가로로 정렬 */
+    align-items: center; /* 버튼 세로 중앙 정렬 */
+}
+
+.translate-btn {
+    margin: 0 5px;
+    font-family: 'Pretendard light';
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+  
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.navigation li{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    text-align: center;
+    opacity: 0.9;
+    cursor: pointer;
+}
+    
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+    
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    text-align: center;
+    opacity: 0.9;
+    cursor: pointer;
+}
+  
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: #486284;
+    opacity: 1;
+    margin: 0 1rem;
+}
+
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffffff;
+    transition: border-bottom ease;
+    cursor: pointer;
+    font-family: 'Pretendard';
+    font-size: 20px;
+}
+
+.tab.active {
+    font-family: 'Pretendard';
+    border-bottom: 2px solid #000000;
+    font-weight: bold;
+}
+
+.tab:hover {
+    border-bottom: 2px solid #cccccc;
+}
+
+.tab:active {
+    border-bottom: 2px solid #000000;
+}
+
+.upload {
+    display: absolute;
+    align-items: center;
+    margin: 20px 5%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 90px 50px;
+    padding-bottom: 40px;
+}
+
+.upload-box {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    text-align: center;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.uploaded-files {
+    margin: 10px 80px;
+    padding: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.uploaded-files div {
+    margin: 5px 0;
+    padding: 5px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.upload-box {
+    position: relative;
+    cursor: pointer;
+}
+
+.file-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    overflow-y: auto;
+    display: none;
+}
+
+.file-list-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.icon {
+    font-size: 48px;
+    margin: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-info {
+    padding: 0px;
+}
+
+.upload-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.complete-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.complete-btn button {
+    padding: 8px 30px;
+    margin: 10px;
+    font-family: 'Pretendard light';
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    background-color: #486284;
+    border-radius: 8px;
+}
+
+.complete-btn button:hover {
+    color: #486284;
+    background-color: #cdcdcd;
+}
+
+.click-here, .upload-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+/*ocr로 텍스트 인식 및 변환 결과*/
+.ocr-result-box {
+    margin: 20px 5%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.ocr-result {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Pretendard';
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#generate-button {
+    margin: 15px 5%;
+    padding: 8px 3%;
+    font-family: 'Pretendard medium';
+    border: 1px solid #a2a2a2;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#generate-button:hover {
+    background-color: #cdcdcd;
+}
+
+#question-generation {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.question-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.question-image {
+    width: 40%;
+}
+
+.raw-data, .questions, .answers {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.raw-data pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.questions div, .answers div {
+    margin-bottom: 20px;
+}
+
+strong {
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.question {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.question:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.question h3 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.question p {
+    margin: 10px 0;
+}
+
+.loading {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 20px;
+}
+
+.server-response {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Pretendard';
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.choices {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.choices li {
+    margin-bottom: 5px;
+}
+
+.single-question, .single-answer {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.single-question:last-child, .single-answer:last-child {
+    border-bottom: none;
+}
+
+/* Flexbox style for placing questions and answers on the left and right respectively */
+.question-answer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.question-content, .answer-content {
+    width: 100%;  /* Adjust the width of each area */
+}
+
+.question-content h3, .answer-content h3 {
+    margin-bottom: 10px;
+}
+
+.answer-item h4 {
+    margin-top: 10px;
+    color: #555;
+}
+
+.answer-item p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.question-item, .answer-item {
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+}
+
+.questions, .answers {
+    page-break-after: always;
+}
+
+.question-item p, .answer-item p {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #486284;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}
+
+.header-images {
+    display: flex; /* Use flexbox */
+    justify-content: flex-end; /* placed at both ends */
+    align-items: center; /* vertical alignment */
+    margin-bottom: 20px; /* Added spacing to the workbook list */
+    margin-right: 40px;
+}
+
+.header-image-right {
+    max-width: 50%; /* Set image maximum width */
+    height: auto; /* Maintain Proportion */
+}
+
+.problem-list {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(4, 1fr); /* 3 per line */
+    gap: -10px;
+}
+
+.problem-set {
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 8px; /* round corners */
+    margin: 5% 40px;
+    padding: 30px;
+    text-align: left; /* Center text */
+    background-color: #D3DCE7; /* Add background color */
+    transition: transform 0.1s; /* Add hover effect */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align vertically */
+    justify-content: flex-start; /* set to stick to the top */
+    transform: scale(1.0); /* Zoom effect on hover */
+    margin-bottom: 10px; /* Distance between workbook boxes */
+}
+
+.problem-set:hover {
+    transform: scale(1.03); /* Zoom effect on hover */
+}
+
+.id-and-favorite {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Adjust spacing between dates and favorite icons */
+    align-items: center; /* vertical alignment */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+.viewProblems, .viewAnswers {
+    background-color: #ffffff;
+    font-family: 'Pretendard';
+    font-weight: 600;
+    border: none;
+    border-width: 0.5px;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.delete-icon {
+    width: 18px; /* Set icon width */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 120px; /* Add spacing from the workbook name */
+}
+
+.problem-set h3 {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    margin: 0;
+}
+
+.problem-set h2 {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center; /* Align vertically */
+    margin: 0; /* Remove default margin */
+}
+
+.workbook-button {
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: flex-start; /* Align to the left */
+    margin-top: 20px; /* Add spacing between buttons and title */
+}
+
+.workbook-button button {
+    flex: 1; /* Ensure buttons have equal width */
+    margin-right: 10px; /* Add spacing between buttons */
+    padding: 10px; /* Add padding to buttons */
+    background-color: #ffffff; /* Set button background color */
+    border: 1px solid #ccc; /* Set button border */
+    border-radius: 4px; /* Round button corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.2s; /* Add hover effect */
+}
+
+.questions, .answers {
+    page-break-inside: avoid; 
+}/* Prevent text from being split across p
