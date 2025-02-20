@@ -1,0 +1,375 @@
+html, body {
+    display: flex;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Modify to allow boxes to wrap */
+    justify-content: center; /* Add center alignment */
+    padding: 0 10px; /* Add padding */
+    margin: 0 auto; /* Add margin for center alignment */
+    max-width: 1200px; /* Set maximum width (adjust as needed) */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid #486284;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0d2d57;
+    margin-left: 6%;
+    margin-right: 5px; /* Add right margin to adjust spacing */
+}
+
+.translate-buttons {
+    margin-right: 20px; /* Adjust right margin */
+    display: flex; /* Align buttons horizontally */
+    align-items: center; /* Vertically center buttons */
+}
+
+.translate-btn {
+    margin: 0 5px;
+    font-family: 'Pretendard light';
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    text-align: center;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: #486284;
+    opacity: 1;
+    margin: 0 1rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu-item {
+    font-size: 16px;
+    font-weight: 500;
+    color: #486284;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.menu-item.active {
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.main {
+    margin-top: 5%; /* Add margin to match header height */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Align vertically */
+    align-items: center; /* Center horizontally */
+    width: 100%; /* Set width to 100% */
+    padding: 20px; /* Add padding */
+    box-sizing: border-box; /* Calculate size including padding */
+}
+
+.header-images {
+    position: relative; /* Change to relative positioning */
+    top: 0; /* Adjust top margin */
+    left: 0; /* Adjust left margin */
+    display: flex; /* Align images horizontally */
+    justify-content: space-between; /* Align to both ends */
+    width: 80%; /* Set width to 100% */
+    padding: 0 10%; /* Add padding */
+}
+
+.header-images img {
+    width: 25%; /* Set image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#container {
+    display: flex; /* Align horizontally */
+    justify-content: center; /* Distribute space evenly */
+}
+
+#category-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Set to 2 columns */
+    gap: 10px; /* Set gap between boxes */
+}
+
+.card {
+    margin: 10px; /* Set card spacing */
+    padding: 18px; /* Add internal padding to card */
+    padding-bottom: 0;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align vertically */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    border-radius: 8px; /* Round corners */
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.01); /* Scale effect on hover */
+}
+
+.category {
+    font-size: 25px; /* Adjust category size */
+    font-weight: 600;
+    color: #666; /* Adjust category color */
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 20px;
+    color: rgba(76, 76, 76, 0.65);
+    font-weight: bold;
+    margin: 0;
+}
+
+.Conversation .category, .Food .category, .Object .category, .Culture .category {
+    color: #486284;
+}
+
+/* Icon styles */
+.conversation-icon, .food-icon, .culture-icon {
+    width: 100px;
+    height: 100px;
+    margin-left: 90px;
+    margin-top: 10px;
+}
+
+.object-icon {
+    width: 100px;
+    height: 100px;
+    margin-left: 90px;
+    margin-top: 7px;
+}
+
+.card.Object, .card.Culture {
+    border: 5px solid #DEE5ED;
+    border-radius: 8px;
+}
+
+.card.Food, .card.Conversation {
+    background-color: #DEE5ED;
+}
+
+.card.Upload {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align vertically */
+    padding: 23px; /* Add internal padding to card */
+}
+
+.Upload {
+    margin-left: 40px;
+    width: 490px;
+    height: 430px;
+    margin-bottom: 10px; /* Set spacing between icon and text */
+    background-color: #DEE5ED;
+}
+
+.upload-icon {
+    width: 200px; /* Set icon width */
+    height: 200px; /* Set icon height */
+    display: flex; /* Use flexbox */
+    margin-left: 170px;
+    margin-top: 60px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.Upload .category {
+    font-size: 30px;
+    color: #486284;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #486284;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#question-generation {
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Align vertically */
+    align-items: center; /* Center horizontally */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    justify-content: center; /* Center vertically */
+    box-sizing: border-box;
+}
+
+.question-answer-container {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px;
+}
+
+.question-content, .answer-content {
+    width: 100%;  /* Adjust width of each area */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.question-content h3, .answer-content h3 {
+    margin-bottom: 10px;
+}
+
+.questions, .answers {
+    width: 100%; /* Set width for left container */
+    margin: 8px;
+    margin-bottom: 40px;
+    padding: 10px 20px; /* Add internal padding */
+    border: 1px solid #ccc; /* Add border */
+    box-sizing: border-box; /* Calculate size including padding */
+    border-radius: 5px; /* Round corners */
+    background-color: #f9f9f9; /* Set background color */
+    word-break: break-word; /* Automatically wrap long text */
+    overflow: hidden;
+    max-width: calc(100% - 20px); /* Adjust maximum width (considering margins) */
+}
+
+.question-image {
+    width: 40%;
+}
+
+.button-container {
+    display: flex; /* Align horizontally */
+    justify-content: center; /* Center alignment */
+    margin-top: 20px; /* Add margin */
+}
+
+.button-container button {
+    margin: 0 10px; /* Set button spacing */
+    padding: 10px 20px; /* Add internal padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Round corners */
+    background-color: #486284; /* Set button background color */
+    color: white; /* Set button text color */
+    cursor: pointer; /* Change mouse cursor */
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+/*Responsive adjustment*/
+@media (max-width: 1920px) {
+    .main {
+        height: 60%;
+    }
+}
+
+@media (max-width: 1680px) {
+    .main {
+        height: 60%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .main {
+        height: 60%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .main {
+        height: 50%;
+    }
+}
+
+@media (max-width: 960px) {
+    .main {
+        padding: 10%;
+        height: 50%;
+    }
+}
+
+@media (max-height: 960px) {
+    .main {
+        height: 60%;
+    }
+}
+
+@media (max-height: 768px) {
+    .main {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: 100%;
+        height: 50%;
+        padding: 8%;
+    }
+}

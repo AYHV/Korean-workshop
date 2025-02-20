@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="category.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>category page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">NOSTACK</div>
+      <nav class="navigation">
+          <div class="nav-links">
+              <div class="nav-link" onclick="location.href='../Main/main.html'" data-i18n="Home">Home</div>
+              <div class="nav-link" onclick="location.href='../Category/category.html'" data-i18n="문제집 생성">문제집 생성</div>
+              <div class="nav-link" onclick="location.href='../History/history.html'" data-i18n="보관함">보관함</div>
+          </div>
+          <div class="divider"></div>
+              <div class="translate-buttons">
+                <button class="translate-btn" data-lang="ko">한국어</button>
+                <button class="translate-btn" data-lang="en">English</button>
+                <button class="translate-btn" data-lang="lo">ພາສາລາວ</button>
+              </div>
+      </nav>
+  </div>
+        <div class="main">
+          <div class="header-images">
+            <img src="" alt="category image" class="category-image">
+            <img src="" alt="upload image" class="upload-image">
+          </div>
+          <div id="container" class="container">
+            <div id="category-container">
+                <div class="card Object" onclick="createProblem('object')">
+                    <p class="category">OBJECT</p>
+                    <p class="title" data-i18n="사물">사물</p>
+                    <img src="/assets/img/object-icon.png" alt="object image" class="object-icon">
+                </div>
+                <div class="card Food" onclick="createProblem('food')">
+                    <p class="category">FOOD</p>
+                    <p class="title" data-i18n="음식">음식</p>              
+                    <img src="/assets/img/food-icon.png" alt="food image" class="food-icon">
+                </div>
+                <div class="card Conversation" onclick="createProblem('conversation')">
+                    <p class="category">CONVERSATION</p>
+                    <p class="title" data-i18n="회화">회화</p>
+                    <img src="/assets/img/conversation-icon.png" alt="conversation image" class="conversation-icon">                    
+                </div>
+                <div class="card Culture" onclick="createProblem('culture')">
+                    <p class="category">CULTURE</p>
+                    <p class="title" data-i18n="문화">문화</p>
+                    <img src="/assets/img/culture-icon.png" alt="culture image" class="culture-icon">
+                </div>
+            </div>
+            <div id="file-upload-container" onclick="location.href='../File-upload/file-upload.html'">
+                <div class="card Upload">
+                    <p class="category">FILE UPLOAD</p>
+                    <p class="title" data-i18n="파일 업로드">파일 업로드</p>                    
+                    <img src="/assets/img/upload-icon.png" alt="upload image" class="upload-icon">
+                </div>
+            </div>
+          </div>
+          <div id="question-generation">
+            <div class="question-answer-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/config/apikey.js"></script>
+    <script type="module" src="/services/localization.js"></script>
+    <script type="module" src="/controller/categoryController.js"></script>
+    <script type="module" src="/controller/questionController.js"></script>
+    <script type="module" src="/controller/tabController.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 import { displayOCRResult } from '../Views/ocr/ocrView.js';
 import { activateTab } from './tabController.js';
 import { processPDF, handleImageFile } from '../controller/ocrController.js'; // file handling utilities
-//import { generateQuestions } from './questionController.js'; // Import problem creation function
+import { generateQuestions } from './questionController.js'; // Import problem creation function
 import { loadTranslations, translations, currentLang  } from '../services/localization.js';
 
 const BASE_URL = config.BASE_URL;
@@ -111,15 +111,65 @@ function addGenerateButton(ocrResult) {
           console.log(localStorage.getItem('preferredLang'));
           generateQuestions(ocrResult); // Call the function to generate questions using the OCR result
       };
+           // Append the button outside of the ocr-result-box
+           const resultBox = document.getElementById('ocr-result-box');
+           resultBox.parentNode.appendChild(generateButton); // Append the button outside the box
       };
 
-      // Append the button outside of the ocr-result-box
-      const resultBox = document.getElementById('ocr-result-box');
-      resultBox.parentNode.appendChild(generateButton); // Append the button outside the box
   }
 
 // Run on page load
 document.addEventListener("DOMContentLoaded", () => {
   loadTranslations(); // Load JSON file and set language
 });
+
+// Problem Regeneration Function 
+export async function regenerateQuestions() {
+  const apiUrl = `${BASE_URL}/api/workbook/retext`;
+  const questionGenerationDiv = document.getElementById('question-generation');
+  
+  try {
+      questionGenerationDiv.style.display = 'block';
+      showLoadingMessage();
+
+      // problem Re-creation API Call
+      const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+      });
+
+      // Response confirmation and processing
+      if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('response :', JSON.stringify(data, null, 2));
+      handleRegenerationResponse(data, questionGenerationDiv);
+  } catch (error) {
+      console.error(' Error regenerating problem :', error);
+      handleRegenerationError(error, questionGenerationDiv);
+  }
+}
+// Button creation function (button to save pdf and regenerate problem)
+export function createButton(label, onClick, customStyle = '') {
+  const button = document.createElement('button');
+  button.setAttribute('data-i18n', label); // Add translation key
+  button.textContent = translations[currentLang][label] || label; // Translated text settings
+  button.style = `
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #486284;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Pretendard';
+      cursor: pointer;
+      ${customStyle}
+  `;
+  button.onclick = onClick;
+  return button;
+}
 
