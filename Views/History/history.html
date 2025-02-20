@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storage</title>
+    <link rel="stylesheet" href="/Views/History/history.css">
+     
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">NOSTACK</div>
+        <nav class="navigation">
+            <div class="nav-links">
+                <div class="nav-link" onclick="location.href='../Main/main.html'" data-i18n="Home">Home</div>
+                <div class="nav-link" onclick="location.href='../Category/category.html'" data-i18n="문제집 생성">문제집 생성</div>
+                <div class="nav-link" onclick="location.href='history.html'" data-i18n="보관함">보관함</div> <!-- 보관함 링크 추가 -->
+            </div>
+            <div class="divider"></div>
+            <div class="translate-buttons">
+                <button class="translate-btn" data-lang="ko">한국어</button>
+                <button class="translate-btn" data-lang="en">English</button>
+                <button class="translate-btn" data-lang="lo">ພາສາລາວ</button>
+            </div>
+        </nav>
+    </div>
+
+    <main class="main">
+        <div id="history" class="tab-content">
+            <div id="problem-list" class="problem-list"></div>
+        </div>
+    </main>
+
+    <script src="/config/apikey.js"></script>
+    <script type="module" src="/services/localization.js"></script>
+    <script type="module" src="/controller/historyController.js"></script>
+</body>
+</html>

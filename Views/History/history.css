@@ -1,0 +1,223 @@
+html, body {
+    display: flex; /* Use flexbox for layout */
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.header {
+    position: fixed; /* Fix the header position */
+    width: 100%; /* Full width */
+    padding: 1rem 0; /* Add padding */
+    border-bottom: 1px solid #486284; /* Add bottom border */
+    background-color: #ffffff; /* White background */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between elements */
+    z-index: 1000; /* Ensure it stays on top */
+}
+  
+.logo {
+    font-size: 1.5rem; /* Set font size */
+    font-weight: bold; /* Bold font */
+    color: #0d2d57; /* Set text color */
+    margin-left: 6%; /* Left margin */
+    margin-right: 5px; /* Adjust right margin */
+}
+  
+.translate-buttons {
+    margin-right: 20px; /* Adjust right margin */
+    display: flex; /* Arrange buttons horizontally */
+    align-items: center; /* Center align buttons */
+}
+.translate-btn {
+    margin: 0 5px; /* Add margin between buttons */
+    font-family: 'Pretendard light'; /* Set font */
+    font-size: 1rem; /* Set font size */
+    border: none; /* Remove border */
+    background-color: transparent; /* Transparent background */
+    cursor: pointer; /* Change cursor to pointer */
+}
+  
+.navigation {
+    display: flex; /* Use flexbox for navigation */
+    align-items: center; /* Align items vertically */
+    margin-right: 5%; /* Adjust right margin */
+}
+    
+.nav-links {
+    display: flex; /* Use flexbox for links */
+    gap: 2rem; /* Add space between links */
+}
+    
+.nav-link {
+    font-size: 1rem; /* Set font size */
+    font-weight: 500; /* Medium font weight */
+    color: #486284; /* Set text color */
+    text-align: center; /* Center align text */
+    opacity: 0.9; /* Slightly transparent */
+    cursor: pointer; /* Change cursor to pointer */
+}
+  
+.divider {
+    width: 1px; /* Set width */
+    height: 24px; /* Set height */
+    background-color: #486284; /* Set color */
+    opacity: 1; /* Full opacity */
+    margin: 0 1rem; /* Adjust margin */
+}
+
+.main {
+    margin-top: 5%; /* Adjust top margin to match header height */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange elements vertically */
+    align-items: center; /* Center align horizontally */
+    height: calc(100% - 60px); /* Set height excluding header */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-top: 20px; /* Add top padding */
+    padding-left: 40px; /* Add left padding */
+    padding-right: 40px; /* Add right padding */
+    padding-bottom: 80px; /* Add bottom padding */
+    box-sizing: border-box; /* Include padding in size calculation */
+}
+
+.header-images {
+    position: relative; /* Use relative positioning */
+    top: 0; /* Adjust top spacing */
+    left: 0; /* Adjust left spacing */
+    display: flex; /* Use flexbox for images */
+    justify-content: space-between; /* Distribute images evenly */
+    width: 80%; /* Set width */
+    padding: 0; /* Remove padding */
+    margin-left: 77%; /* Move images to the right */
+    margin-bottom: 20px; /* Add spacing below images */
+}
+  
+.header-images img {
+    width: 25%; /* Set image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.problem-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Adjust spacing */
+    width: 100%; /* Full width */
+    padding: 10px; /* Adjust padding */
+    box-sizing: border-box; /* Include padding in size calculation */
+}
+
+.problem-set {
+    flex: 0 0 calc(24% - 5px); /* Set width for 4 items per row */
+    max-width: calc(24% - 5px); /* Adjust max width */
+    margin: 15px 5px; /* Adjust margins */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: left;
+    background-color: #D3DCE7;
+    transition: transform 0.1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.problem-set:hover {
+    transform: scale(1.03); /* Scale up on hover */
+}
+
+.id-and-favorite {
+    display: flex;
+    justify-content: space-between; /* Space out items */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.viewProblems, .viewAnswers {
+    background-color: #ffffff;
+    font-family: 'Pretendard';
+    font-weight: 600;
+    border: none;
+    border-width: 0.5px;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.delete-icon {
+    width: 18px;
+    height: auto;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+.problem-set h3 {
+    font-size: 16px; /* Set font size for h3 elements */
+    font-weight: 600; /* Set font weight for h3 elements */
+    display: flex; /* Use flexbox for layout */
+    margin: 0; /* Remove default margin */
+}
+
+.problem-set h2 {
+    font-size: 20px; /* Set font size for h2 elements */
+    font-weight: 700; /* Set font weight for h2 elements */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    margin: 0; /* Remove default margin */
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+}
+
+
+.workbook-button {
+    display: flex; /* Arrange buttons in a row */
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 20px; /* Add space between buttons and title */
+}
+
+.workbook-button button {
+    flex: 1; /* Make buttons equal width */
+    margin-right: 10px; /* Add spacing between buttons */
+    padding: 10px; /* Add padding */
+    background-color: #ffffff; /* Set background color */
+    border: 1px solid #ccc; /* Set border */
+    border-radius: 4px; /* Round corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s; /* Smooth hover effect */
+}
+
+.questions, .answers {
+    page-break-inside: avoid; /* Prevent text from splitting */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+
+/* Adjust layout for smaller screens => Media Queries */
+@media (max-width: 1200px) {
+    .problem-set {
+        flex: 0 0 calc(33.33% - 13.33px); /* Set flex basis for 3 items per row */
+        max-width: calc(33.33% - 13.33px); /* Set maximum width for 3 items per row */
+    }
+}
+
+@media (max-width: 900px) {
+    .problem-set {
+        flex: 0 0 calc(50% - 10px); /* Set flex basis for 2 items per row */
+        max-width: calc(50% - 10px); /* Set maximum width for 2 items per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .problem-set {
+        flex: 0 0 100%; /* Set flex basis for 1 item per row */
+        max-width: 100%; /* Set maximum width for 1 item per row */
+    }
+}
